@@ -1,0 +1,120 @@
+/* 
+Tarjeta de Navidad Javier Diez Montesinos
+ */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+img {
+    position:absolute;
+    top:0;
+    left:0;    
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position: 60% 10%;
+    /* para suavizar los efectos */
+    transition: all 1.5s ease;
+    -webkit-transition: all 1.5s ease;
+    z-index:0;
+}
+a{
+    margin: 1em 2%;
+    height: 2em;
+    width: 10%;
+    text-align: center;
+    text-decoration:solid;
+    cursor: pointer;
+    font: message-box;
+    box-shadow: 5px 5px 5px 0 black;
+    border-radius: 0.4em;
+    color: whitesmoke;
+}
+
+div {
+    position:absolute;
+    top:0%;
+    left:0%;
+    width: 100%;
+    height: 100%;
+    opacity:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    /* para suavizar los efectos */
+    transition: all 1.5s ease;
+    -webkit-transition: all 1.5s ease;
+    background-color:transparent;
+    z-index:1;
+}
+
+p {
+    text-align:center;
+    /* para suavizar los efectos */
+    transition: all 1.5s ease;
+    -webkit-transition: all 1.5s ease;
+    background-color:transparent;
+    color:red;
+    text-shadow:1px 1px goldenrod;
+    font-size:calc(1.2em + 1vw + 1vh);
+    font-weight:bold;
+    z-index:2;
+}
+
+p:nth-child(3) {
+    color:green;
+    font-style:italic;
+}
+
+div:active, div:hover {
+    opacity:1;
+    background-color:rgba(255,255,255,0.15);
+    
+}
+
+#mov {
+    animation-name: dos;
+    animation-duration: 1s;
+    animation-iteration-count: 5;
+    animation-direction: alternate;
+}
+
+
+
+@keyframes dos {
+    from {
+        margin-left: 100%;
+        width: 100%;
+        color:red;
+    }
+    
+    50% {
+        font-size: 300%;
+        color:yellow;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+        color:blue;
+    }
+}
+
+
+
+@media all and (orientation:landscape){
+    img, div {
+        width:70vh;
+        margin-left:calc(50vw - 35vh);
+    }
+}
