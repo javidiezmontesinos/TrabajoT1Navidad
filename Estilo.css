@@ -1,0 +1,167 @@
+* 
+Tarjeta de Navidad Javier Diez Montesinos
+ */
+ 
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+p {
+    text-align:center;
+    transition: all 1.5s ease;
+    -webkit-transition: all 1.5s ease;
+    background-color:transparent;
+    color:rgb(22, 207, 53);
+    text-shadow:1px 1px rgb(35, 32, 218);
+    font-size:calc(1.2em + 1vw + 1vh);
+    font-weight:bold;
+    z-index:2;
+}
+
+div {
+    position:absolute;
+    top:0%;
+    left:0%;
+    width: 100%;
+    height: 100%;
+    opacity:0;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+    transition: all 1.5s ease;
+    -webkit-transition: all 1.5s ease;
+    background-color:transparent;
+    z-index:1;
+}
+
+img {
+    position:absolute;
+    top:0;
+    left:0;    
+    width:100%;
+    height:100%;
+    object-fit: cover;
+    object-position: 60% 10%;
+    transition: all 1.5s ease;
+    -webkit-transition: all 1.5s ease;
+    z-index:0;
+}
+a{
+    margin: 1em 2%;
+    height: 2em;
+    width: 10%;
+    text-align: center;
+    text-decoration:solid;
+    cursor: pointer;
+    font: message-box;
+    box-shadow: 5px 5px 5px 0 black;
+    border-radius: 0.4em;
+    color: whitesmoke;
+}
+
+
+
+
+p:nth-child(3) {
+    color:rgb(202, 10, 10);
+    font-style:italic;
+}
+
+div:active, div:hover {
+    opacity:1;
+    background-color:rgba(255, 255, 255, 0.055);
+    
+}
+
+#mov {
+    animation-name: dos;
+    animation-duration: 1s;
+    animation-iteration-count: 5;
+    animation-direction: alternate;
+}
+
+.snow{
+    background-image: url(./snowball.png);
+    background-repeat: repeat;
+    width: 100%;
+    height: 1080px;
+    top:0;
+    left:0;
+    position: absolute;
+    filter: blur(1.5px);
+}
+.little{
+    background-size: 150px 135px;
+    background-position: 0px -100px;
+    animation: snow1 14s infinite linear;
+}
+.normal{
+    animation: snow2 12s linear infinite;
+}
+.big{
+    background-size: 600px 540px;
+    background-position: 0px 90px;
+    animation: snow3 10s linear infinite;
+}
+.giant{
+    background-size: 900px 810px;
+    background-position: 150px 100px;
+    animation: snow4 8s linear infinite;
+}
+@keyframes snow1 {
+    0%{ background-position: 0px -100px;}
+    100%{ background-position: 150px 35px;}
+    
+}
+@keyframes snow2 {
+    0%{ background-position: 0px 0px;}
+    100%{ background-position: 300px 270px;}
+    
+}
+@keyframes snow3 {
+    0%{ background-position: 0px 90px;}
+    100%{ background-position: 600px 630px;}
+    
+}
+@keyframes snow4 {
+    0%{ background-position:150px 100px;}
+    100%{ background-position: 1050px 910px;}
+    
+}
+
+@keyframes dos {
+    from {
+        margin-left: 100%;
+        width: 100%;
+        color:red;
+    }
+    
+    50% {
+        font-size: 300%;
+        color:yellow;
+    }
+
+    to {
+        margin-left: 0%;
+        width: 100%;
+        color:rgb(40, 194, 26);
+    }
+}
+
+
+
+@media all and (orientation:landscape){
+    img, div {
+        width:70vh;
+        margin-left:calc(50vw - 35vh);
+    }
+}
