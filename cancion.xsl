@@ -7,11 +7,13 @@
 		</head>
 		<body
 			<h2>cancion:</h2>
-			<h1><xsl:value-of select="titulo"/></h1>
+			<h1>titulo<xsl:value-of select="titulo"/></h1>
+			<h1>Cancion/titulo<xsl:value-of select="cancion/titulo"/></h1>
+			<h1>//<xsl:value-of select="/cancion/titulo"/></h1>
 			
 	</body>
 	
 	
 </html>
 </xsl:template>
-</xsl:stylesh
+</xsl:stylesheet>
